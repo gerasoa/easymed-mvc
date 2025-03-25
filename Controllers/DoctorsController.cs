@@ -82,6 +82,9 @@ namespace easymed_mvc.Controllers
         public async Task<IActionResult> Index()
         {
             var applicationDbContext = _context.Doctor.Include(d => d.User);
+
+            
+
             return View(await applicationDbContext.ToListAsync());
         }
 
@@ -130,20 +133,31 @@ namespace easymed_mvc.Controllers
         }
 
         // GET: Doctors/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        public async Task<IActionResult> Edit(int id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
             var doctor = await _context.Doctor.FindAsync(id);
             if (doctor == null)
             {
-                return NotFound();
+                return NotFound();            
             }
-            ViewData["UserId"] = new SelectList(_context.Users, "Id", "Id", doctor.UserId);
-            return View(doctor);
+
+            var viewModel = new DoctorEditViewModel
+            {
+                Id = doctor.Id,
+                FullName = doctor.FullName,
+                Specialty = doctor.Specialty,
+                Status = doctor.Status,
+                StatusList = Enum.GetValues(typeof(DoctorStatus))
+                         .Cast<DoctorStatus>()
+                         .Select(s => new SelectListItem
+                         {
+                             Value = s.ToString(),
+                             Text = s.ToString()
+                         })
+            };
+
+            // ViewData["UserId"] = new SelectList(_context.Users, "Id", "Id", doctor.UserId);
+            return View(viewModel);
         }
 
         // POST: Doctors/Edit/5
@@ -151,9 +165,9 @@ namespace easymed_mvc.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,FullName,Specialty,UserId")] Doctor doctor)
+        public async Task<IActionResult> Edit(int id, DoctorEditViewModel viewModel)
         {
-            if (id != doctor.Id)
+            if (id != viewModel.Id)
             {
                 return NotFound();
             }
@@ -162,12 +176,22 @@ namespace easymed_mvc.Controllers
             {
                 try
                 {
+                    var doctor = await _context.Doctor.FindAsync(id);
+                    if(doctor == null)
+                    {
+                        return NotFound();
+                    }
+
+                    doctor.FullName = viewModel.FullName;
+                    doctor.Specialty = viewModel.Specialty;
+                    doctor.Status = viewModel.Status;
+
                     _context.Update(doctor);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!DoctorExists(doctor.Id))
+                    if (!DoctorExists(viewModel.Id))
                     {
                         return NotFound();
                     }
@@ -178,8 +202,17 @@ namespace easymed_mvc.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["UserId"] = new SelectList(_context.Users, "Id", "Id", doctor.UserId);
-            return View(doctor);
+            // ViewData["UserId"] = new SelectList(_context.Users, "Id", "Id", doctor.UserId);
+
+                viewModel.StatusList = Enum.GetValues(typeof(DoctorStatus))
+                               .Cast<DoctorStatus>()
+                               .Select(s => new SelectListItem
+                               {
+                                   Value = s.ToString(),
+                                   Text = s.ToString()
+                               });
+
+            return View(viewModel);
         }
 
         // GET: Doctors/Delete/5
@@ -220,5 +253,7 @@ namespace easymed_mvc.Controllers
         {
             return _context.Doctor.Any(e => e.Id == id);
         }
+
+       
     }
 }

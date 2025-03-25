@@ -1,4 +1,4 @@
-@model Doctor
+@model easymed_mvc.ViewModels.DoctorEditViewModel
 
 @{
     ViewData["Title"] = "Edit";
@@ -23,11 +23,18 @@
                 <input asp-for="Specialty" class="form-control" />
                 <span asp-validation-for="Specialty" class="text-danger"></span>
             </div>
-            <div class="form-group">
+             <div class="form-group">
+                <label asp-for="Status" class="control-label"></label>
+                <select asp-for="Status" class="form-control" asp-items="Model.StatusList"></select>
+                <span asp-validation-for="Status" class="text-danger"></span>
+            </div>
+            @* <div class="form-group">
                 <label asp-for="UserId" class="control-label"></label>
                 <select asp-for="UserId" class="form-control" asp-items="ViewBag.UserId"></select>
                 <span asp-validation-for="UserId" class="text-danger"></span>
-            </div>
+            </div> *@
+            @* <input type="hidden" asp-for="UserId" /> *@
+
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>

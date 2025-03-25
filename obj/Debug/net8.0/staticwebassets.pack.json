@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\GitHub\\easymed-mvc\\wwwroot\\images\\default-doctor.png",
+      "PackagePath": "staticwebassets\\images\\default-doctor.png"
+    },
+    {
       "Id": "C:\\GitHub\\easymed-mvc\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

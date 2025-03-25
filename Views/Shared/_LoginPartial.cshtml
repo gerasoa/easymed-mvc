@@ -1,18 +1,28 @@
 ﻿@using Microsoft.AspNetCore.Identity
 @inject SignInManager<IdentityUser> SignInManager
 @inject UserManager<IdentityUser> UserManager
+@inject easymed_mvc.Data.ApplicationDbContext DbContext
 
 <ul class="navbar-nav">
 @if (SignInManager.IsSignedIn(User))
 {
-    <li class="nav-item">
-        <a  class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @User.Identity?.Name!</a>
-    </li>
-    <li class="nav-item">
-        <form  class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
-            <button  type="submit" class="nav-link btn btn-link text-dark">Logout</button>
-        </form>
-    </li>
+    var userId = UserManager.GetUserId(User);
+    var doctorName = DbContext.Doctor.FirstOrDefault(d => d.UserId == userId)?.FullName ?? User.Identity?.Name;
+
+    <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+           @doctorName
+          </a>
+          <ul class="dropdown-menu">
+            <li> <a class="dropdown-item" asp-area="" asp-controller="Doctors" asp-action="Profile">Profile</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li class="text-start"> 
+                <form class="dropdown-item" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })" method="post">
+                    <button type="submit" class="btn btn-link dropdown-item text-start p-0">Logout</button>
+                </form>
+            </li>
+          </ul>
+        </li>
 }
 else
 {

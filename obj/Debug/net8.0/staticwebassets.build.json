@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "OmioYqCgc5Yed0fiXrgJs7VMDcgkdM88takvRzMIfnY=",
+  "Hash": "gWioC+z0+clv9H0sEee7aAANu1AbvIQUZmZdQioTbno=",
   "Source": "easymed-mvc",
   "BasePath": "_content/easymed-mvc",
   "Mode": "Default",
@@ -73,8 +73,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "c2tiyv64ts",
-      "Integrity": "pAGv4ietcJNk/EwsQZ5BN9+K4MuNYS2a9wl4Jw+q9D0=",
+      "Fingerprint": "6kev2i7xf5",
+      "Integrity": "dtV7T1EF53YrpfyXwxgYDbCMMx9xU1bPVl1GPLuUNys=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
@@ -99,6 +99,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\GitHub\\easymed-mvc\\wwwroot\\images\\default-doctor.png",
+      "SourceId": "easymed-mvc",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\GitHub\\easymed-mvc\\wwwroot\\",
+      "BasePath": "_content/easymed-mvc",
+      "RelativePath": "images/default-doctor#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "sqegmrm5gu",
+      "Integrity": "XI92Y6pPDhbTDnn9xcIWNlXUq9NmKKIy2nc51jQcfBM=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\default-doctor.png"
     },
     {
       "Identity": "C:\\GitHub\\easymed-mvc\\wwwroot\\js\\site.js",
@@ -2581,7 +2602,7 @@
   ],
   "Endpoints": [
     {
-      "Route": "css/site.c2tiyv64ts.css",
+      "Route": "css/site.6kev2i7xf5.css",
       "AssetFile": "C:\\GitHub\\easymed-mvc\\wwwroot\\css\\site.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -2591,7 +2612,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "362"
+          "Value": "427"
         },
         {
           "Name": "Content-Type",
@@ -2599,11 +2620,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"pAGv4ietcJNk/EwsQZ5BN9+K4MuNYS2a9wl4Jw+q9D0=\""
+          "Value": "\"dtV7T1EF53YrpfyXwxgYDbCMMx9xU1bPVl1GPLuUNys=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 24 Mar 2025 17:11:20 GMT"
+          "Value": "Tue, 25 Mar 2025 15:11:11 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2613,7 +2634,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "c2tiyv64ts"
+          "Value": "6kev2i7xf5"
         },
         {
           "Name": "label",
@@ -2621,7 +2642,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-pAGv4ietcJNk/EwsQZ5BN9+K4MuNYS2a9wl4Jw+q9D0="
+          "Value": "sha256-dtV7T1EF53YrpfyXwxgYDbCMMx9xU1bPVl1GPLuUNys="
         }
       ]
     },
@@ -2636,7 +2657,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "362"
+          "Value": "427"
         },
         {
           "Name": "Content-Type",
@@ -2644,11 +2665,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"pAGv4ietcJNk/EwsQZ5BN9+K4MuNYS2a9wl4Jw+q9D0=\""
+          "Value": "\"dtV7T1EF53YrpfyXwxgYDbCMMx9xU1bPVl1GPLuUNys=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 24 Mar 2025 17:11:20 GMT"
+          "Value": "Tue, 25 Mar 2025 15:11:11 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2658,7 +2679,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-pAGv4ietcJNk/EwsQZ5BN9+K4MuNYS2a9wl4Jw+q9D0="
+          "Value": "sha256-dtV7T1EF53YrpfyXwxgYDbCMMx9xU1bPVl1GPLuUNys="
         }
       ]
     },
@@ -5125,6 +5146,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-hjIBkvmgxQXbNXK3B9YQ3t06RwLuQSQzC/dpvuB/lMk="
+        }
+      ]
+    },
+    {
+      "Route": "images/default-doctor.png",
+      "AssetFile": "C:\\GitHub\\easymed-mvc\\wwwroot\\images\\default-doctor.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "200220"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"XI92Y6pPDhbTDnn9xcIWNlXUq9NmKKIy2nc51jQcfBM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 25 Mar 2025 15:17:12 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-XI92Y6pPDhbTDnn9xcIWNlXUq9NmKKIy2nc51jQcfBM="
+        }
+      ]
+    },
+    {
+      "Route": "images/default-doctor.sqegmrm5gu.png",
+      "AssetFile": "C:\\GitHub\\easymed-mvc\\wwwroot\\images\\default-doctor.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "200220"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"XI92Y6pPDhbTDnn9xcIWNlXUq9NmKKIy2nc51jQcfBM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 25 Mar 2025 15:17:12 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "sqegmrm5gu"
+        },
+        {
+          "Name": "label",
+          "Value": "images/default-doctor.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-XI92Y6pPDhbTDnn9xcIWNlXUq9NmKKIy2nc51jQcfBM="
         }
       ]
     },
