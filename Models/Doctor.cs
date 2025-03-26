@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.AspNetCore.Identity;
+using System.ComponentModel.DataAnnotations;
 
 public enum DoctorStatus
 {
@@ -12,7 +13,8 @@ public enum DoctorStatus
 
 public class Doctor
 {
-    public int Id { get; set; }
+    [Key]
+    public Guid Id { get; set; }
     public string FullName { get; set; }
     public string Specialty { get; set; } // Ex: Cardiologia, Dermatologia
     public string UserId { get; set; } // Foreign Key to IdentityUser

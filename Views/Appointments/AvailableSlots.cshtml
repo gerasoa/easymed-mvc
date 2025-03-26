@@ -1,0 +1,35 @@
+@model AvailableSlotsViewModel
+
+<h1>Available Slots for @Model.DoctorName</h1>
+
+<form method="get" asp-action="AvailableSlots" asp-route-doctorId="@Model.DoctorId">
+    <input type="hidden" name="doctorId" value="@Model.DoctorId" />
+    <div class="form-group">
+        <label for="selectedDate">Select a Date:</label>
+        <input type="date" id="selectedDate" name="selectedDate" class="form-control" value="@DateTime.Now.ToString("yyyy-MM-dd")" />
+    </div>
+    <button type="submit" class="btn btn-primary">Check Availability</button>
+</form>
+
+@if (Model.AvailableSlots != null && Model.AvailableSlots.Any())
+{
+    <h2>Available Slots</h2>
+    <form method="post" asp-action="BookAppointment">
+        <input type="hidden" name="DoctorId" value="@Model.DoctorId" />
+        <input type="hidden" name="SelectedDate" value="@Model.SelectedDate.ToString("yyyy-MM-dd")" />
+        <div class="form-group">
+            <label for="selectedSlot">Select a Slot:</label>
+            <select id="selectedSlot" name="SelectedSlot" class="form-control">
+                @foreach (var slot in Model.AvailableSlots)
+                {
+                    <option value="@slot">@slot.ToString("t")</option>
+                }
+            </select>
+        </div>
+        <button type="submit" class="btn btn-success">Book Appointment</button>
+    </form>
+}
+else
+{
+    <p>No available slots for the selected date.</p>
+}

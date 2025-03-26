@@ -89,7 +89,7 @@ namespace easymed_mvc.Controllers
         }
 
         // GET: Doctors/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public async Task<IActionResult> Details(Guid? id)
         {
             if (id == null)
             {
@@ -165,7 +165,7 @@ namespace easymed_mvc.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, DoctorEditViewModel viewModel)
+        public async Task<IActionResult> Edit(Guid id, DoctorEditViewModel viewModel)
         {
             if (id != viewModel.Id)
             {
@@ -216,7 +216,7 @@ namespace easymed_mvc.Controllers
         }
 
         // GET: Doctors/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        public async Task<IActionResult> Delete(Guid? id)
         {
             if (id == null)
             {
@@ -249,7 +249,7 @@ namespace easymed_mvc.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        private bool DoctorExists(int id)
+        private bool DoctorExists(Guid id)
         {
             return _context.Doctor.Any(e => e.Id == id);
         }

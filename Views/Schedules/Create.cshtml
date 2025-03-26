@@ -1,0 +1,40 @@
+@model ScheduleViewModel
+
+<h1>Create Schedule</h1>
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label asp-for="DaysOfWeek" class="control-label">Days of the Week</label>
+        <select asp-for="DaysOfWeek" class="form-control" multiple>
+            <option value="Monday">Monday</option>
+            <option value="Tuesday">Tuesday</option>
+            <option value="Wednesday">Wednesday</option>
+            <option value="Thursday">Thursday</option>
+            <option value="Friday">Friday</option>
+            <option value="Saturday">Saturday</option>
+            <option value="Sunday">Sunday</option>
+        </select>
+        <span asp-validation-for="DaysOfWeek" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="StartTime" class="control-label"></label>
+        <input asp-for="StartTime" class="form-control" type="time" />
+        <span asp-validation-for="StartTime" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="EndTime" class="control-label"></label>
+        <input asp-for="EndTime" class="form-control" type="time" />
+        <span asp-validation-for="EndTime" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ValidUntil" class="control-label"></label>
+        <input asp-for="ValidUntil" class="form-control" type="date" />
+        <span asp-validation-for="ValidUntil" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="SlotDurationInMinutes" class="control-label"></label>
+        <input asp-for="SlotDurationInMinutes" class="form-control" />
+        <span asp-validation-for="SlotDurationInMinutes" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>

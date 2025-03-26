@@ -13,16 +13,23 @@
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
            @doctorName
           </a>
-          <ul class="dropdown-menu">
-            <li> <a class="dropdown-item" asp-area="" asp-controller="Doctors" asp-action="Profile">Profile</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li class="text-start"> 
-                <form class="dropdown-item" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })" method="post">
-                    <button type="submit" class="btn btn-link dropdown-item text-start p-0">Logout</button>
-                </form>
-            </li>
-          </ul>
+        <ul class="dropdown-menu">
+        <li> 
+            <a class="dropdown-item" asp-controller="Profiles" asp-action="Index">Profile</a>
         </li>
+        
+        <li>
+            @* <a class="dropdown-item" href="#">Another action</a> *@
+            <a class="dropdown-item" asp-controller="Profiles" asp-action="Index">View Profile</a>
+             <a asp-action="Index" asp-controller="Profiles"  class="btn btn-primary">teste</a>
+        </li>
+        <li class="text-start"> 
+            <form class="dropdown-item" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })" method="post">
+                <button type="submit" class="btn btn-link dropdown-item text-start p-0">Logout</button>
+            </form>
+        </li>
+        </ul>
+    </li>
 }
 else
 {

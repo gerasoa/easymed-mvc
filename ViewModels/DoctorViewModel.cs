@@ -6,7 +6,7 @@ namespace easymed_mvc.ViewModels
 {
     public class DoctorEditViewModel
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
 
         [Required]
         [Display(Name = "Full Name")]
@@ -25,7 +25,7 @@ namespace easymed_mvc.ViewModels
 
      public class DoctorViewModel
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
 
         [Required]
         [Display(Name = "Full Name")]

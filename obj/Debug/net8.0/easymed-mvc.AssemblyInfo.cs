@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("easymed-mvc")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2d840ddf7bb3b7cb9a1be180ae80172366b5a31c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+54f8137c37aafd3e2b0f2befe6669288093eb332")]
 [assembly: System.Reflection.AssemblyProductAttribute("easymed-mvc")]
 [assembly: System.Reflection.AssemblyTitleAttribute("easymed-mvc")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

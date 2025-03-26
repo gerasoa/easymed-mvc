@@ -17,6 +17,9 @@
                             <strong>Specialty:</strong> @doctor.Specialty
                         </p>
                         <a href="@Url.Action("Details", "Doctors", new { id = doctor.Id })" class="btn btn-primary">View Profile</a>
+                         <a asp-action="AvailableSlots" asp-controller="Appointments" asp-route-doctorId="@doctor.Id" class="btn btn-primary">
+                        Schedule Appointment
+                    </a>
                     </div>
                 </div>
             </div>
